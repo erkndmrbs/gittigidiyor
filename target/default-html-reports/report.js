@@ -1,16 +1,57 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/task.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/API.feature");
 formatter.feature({
-  "name": "Testinium Task",
+  "name": "Api trello",
   "description": "",
   "keyword": "Feature"
 });
-formatter.scenario({
-  "name": "Task Steps",
+formatter.scenarioOutline({
+  "name": "Get islemi",
   "description": "",
-  "keyword": "Scenario",
+  "keyword": "Scenario Outline",
   "tags": [
     {
-      "name": "@wip"
+      "name": "@hello"
+    }
+  ]
+});
+formatter.step({
+  "name": "Kullanici \"endpoint\" ile get islemi yapar",
+  "keyword": "Given "
+});
+formatter.step({
+  "name": "Kullanici \"\u003cavatarUrl\u003e\" ve \"\u003cfullName\u003e\" bilgileri ile expected datayi olustur",
+  "keyword": "And "
+});
+formatter.step({
+  "name": "Kullanici api verilerini dogrular",
+  "keyword": "And "
+});
+formatter.examples({
+  "name": "",
+  "description": "",
+  "keyword": "Examples",
+  "rows": [
+    {
+      "cells": [
+        "avatarUrl",
+        "fullName"
+      ]
+    },
+    {
+      "cells": [
+        "https://trello-members.s3.amazonaws.com/5191197f9433cf5507006338/9a94b9e9e546d5494a4d8d5b4e9e6c86",
+        "briancervino"
+      ]
+    }
+  ]
+});
+formatter.scenario({
+  "name": "Get islemi",
+  "description": "",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@hello"
     }
   ]
 });
@@ -18,105 +59,35 @@ formatter.before({
   "status": "passed"
 });
 formatter.step({
-  "name": "\"URL\" sitesi açılır",
+  "name": "Kullanici \"endpoint\" ile get islemi yapar",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.StepDefinitions.sitesiAçılır(java.lang.String)"
+  "location": "stepdefinitions.ApiSD.kullanici_ile_get_islemi_yapar(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Arama kutucuğuna \u0027bilgisayar\u0027 kelimesi girilir",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "stepdefinitions.StepDefinitions.arama_kutucuğuna_kelimesi_girilir(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Arama sonuçları sayfasından 2.sayfa açılır",
+  "name": "Kullanici \"https://trello-members.s3.amazonaws.com/5191197f9433cf5507006338/9a94b9e9e546d5494a4d8d5b4e9e6c86\" ve \"briancervino\" bilgileri ile expected datayi olustur",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.StepDefinitions.arama_sonuçları_sayfasından_sayfa_açılır(int)"
+  "location": "stepdefinitions.ApiSD.kullanici_ve_bilgileri_ile_expected_datayi_olustur(java.lang.String,java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "2.sayfanın açıldığı kontrol edilir",
+  "name": "Kullanici api verilerini dogrular",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.StepDefinitions.sayfanın_açıldığı_kontrol_edilir(int)"
+  "location": "stepdefinitions.ApiSD.kullanici_api_verilerini_dogrular()"
 });
 formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Sonuca göre sergilenen ürünlerden rastgele bir ürün seçilir",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.StepDefinitions.sonuca_göre_sergilenen_ürünlerden_rastgele_bir_ürün_seçilir()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Seçilen ürünün ürün bilgisi ve tutar bilgisi txt dosyasına yazılır",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.StepDefinitions.seçilen_ürünün_ürün_bilgisi_ve_tutar_bilgisi_txt_dosyasına_yazılır()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Seçilen ürün sepete eklenir",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "stepdefinitions.StepDefinitions.seçilen_ürün_sepete_eklenir()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Ürün sayfasındaki fiyat ile sepette yer alan ürün fiyatının doğruluğu karşılaştırılır",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepdefinitions.StepDefinitions.ürün_sayfasındaki_fiyat_ile_sepette_yer_alan_ürün_fiyatının_doğruluğu_karşılaştırılır()"
-});
-formatter.result({
-  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//div[@class\u003d\u0027text-box\u0027]//h2\"}\n  (Session info: chrome\u003d102.0.5005.63)\nFor documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element\nBuild info: version: \u00274.1.4\u0027, revision: \u0027535d840ee2\u0027\nSystem info: host: \u0027DESKTOP-S080O75\u0027, ip: \u0027192.168.1.76\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.11\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCommand: [5dc64407bfdab1f701a95163ff6fffd4, findElement {using\u003dxpath, value\u003d//div[@class\u003d\u0027text-box\u0027]//h2}]\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.63, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: C:\\Users\\Win10\\AppData\\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:64368}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64368/devtoo..., se:cdpVersion: 102.0.5005.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 5dc64407bfdab1f701a95163ff6fffd4\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)\r\n\tat org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)\r\n\tat org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)\r\n\tat org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)\r\n\tat org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)\r\n\tat com.sun.proxy.$Proxy23.getText(Unknown Source)\r\n\tat stepdefinitions.StepDefinitions.ürün_sayfasındaki_fiyat_ile_sepette_yer_alan_ürün_fiyatının_doğruluğu_karşılaştırılır(StepDefinitions.java:107)\r\n\tat ✽.Ürün sayfasındaki fiyat ile sepette yer alan ürün fiyatının doğruluğu karşılaştırılır(file:///C:/Users/Win10/Downloads/com.Testinium/src/test/resources/features/task.feature:11)\r\n",
+  "error_message": "io.restassured.path.json.exception.JsonPathException: Failed to parse the JSON document\r\n\tat io.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:1002)\r\n\tat io.restassured.path.json.JsonPath$4.doParseWith(JsonPath.java:967)\r\n\tat io.restassured.path.json.JsonPath$JsonParser.parseWith(JsonPath.java:1047)\r\n\tat io.restassured.path.json.JsonPath.get(JsonPath.java:202)\r\n\tat io.restassured.path.json.JsonPath.getString(JsonPath.java:352)\r\n\tat stepdefinitions.ApiSD.kullanici_api_verilerini_dogrular(ApiSD.java:55)\r\n\tat ✽.Kullanici api verilerini dogrular(file:///C:/Users/Win10/Downloads/com.Testinium/src/test/resources/features/API.feature:7)\r\nCaused by: groovy.json.JsonException: Lexing failed on line: 1, column: 1, while reading \u0027C\u0027, no possible valid JSON value or punctuation could be recognized.\r\n\tat groovy.json.JsonLexer.nextToken(JsonLexer.java:86)\r\n\tat groovy.json.JsonLexer$nextToken.call(Unknown Source)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:130)\r\n\tat io.restassured.internal.path.json.ConfigurableJsonSlurper.parse(ConfigurableJsonSlurper.groovy:97)\r\n\tat io.restassured.internal.path.json.ConfigurableJsonSlurper$parse.callCurrent(Unknown Source)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)\r\n\tat io.restassured.internal.path.json.ConfigurableJsonSlurper.parseText(ConfigurableJsonSlurper.groovy:83)\r\n\tat io.restassured.path.json.JsonPath$4$1.method(JsonPath.java:965)\r\n\tat io.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:1000)\r\n\tat io.restassured.path.json.JsonPath$4.doParseWith(JsonPath.java:967)\r\n\tat io.restassured.path.json.JsonPath$JsonParser.parseWith(JsonPath.java:1047)\r\n\tat io.restassured.path.json.JsonPath.get(JsonPath.java:202)\r\n\tat io.restassured.path.json.JsonPath.getString(JsonPath.java:352)\r\n\tat stepdefinitions.ApiSD.kullanici_api_verilerini_dogrular(ApiSD.java:55)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566)\r\n\tat io.cucumber.java.Invoker.invoke(Invoker.java:27)\r\n\tat io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:27)\r\n\tat io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)\r\n\tat io.cucumber.core.runner.TestStep.executeStep(TestStep.java:64)\r\n\tat io.cucumber.core.runner.TestStep.run(TestStep.java:49)\r\n\tat io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:46)\r\n\tat io.cucumber.core.runner.TestCase.run(TestCase.java:51)\r\n\tat io.cucumber.core.runner.Runner.runPickle(Runner.java:67)\r\n\tat io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:149)\r\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:83)\r\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:24)\r\n\tat org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)\r\n\tat org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)\r\n\tat org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:413)\r\n\tat io.cucumber.junit.Cucumber.runChild(Cucumber.java:185)\r\n\tat io.cucumber.junit.Cucumber.runChild(Cucumber.java:83)\r\n\tat org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)\r\n\tat org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)\r\n\tat io.cucumber.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:219)\r\n\tat org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:413)\r\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:137)\r\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)\r\n\tat com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)\r\n\tat com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)\r\n\tat com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)\r\n",
   "status": "failed"
-});
-formatter.step({
-  "name": "Adet arttırılarak ürün adedinin \"2\" olduğu doğrulanır",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepdefinitions.StepDefinitions.adetArttırılarakÜrünAdedininOlduğuDoğrulanır(java.lang.String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Ürün sepetten silinerek sepetin boş olduğu kontrol edilir",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepdefinitions.StepDefinitions.ürün_sepetten_silinerek_sepetin_boş_olduğu_kontrol_edilir()"
-});
-formatter.result({
-  "status": "skipped"
 });
 formatter.embedding("image/png", "embedded0.png", "screenshot");
 formatter.after({
