@@ -1,14 +1,12 @@
-Feature: Api trello
+Feature: Trello API test
 
-  @hello
-  Scenario: BoardOlusturma islemi
-    Given Kullanici CreateBoard islemi yapmak icin "endpoint" e post yaparak gelen status codun 200 oldugunu dogrular
+  Scenario: API tests
 
-    Scenario: List Olusturma
-      Given Kullanici CreateList islemi yapmak icin endpoint e post yaparak gelen status codun 200 oldugunu dogrulanır
+    Then kullanici   1 adet board olusturur
+    When kullanici  2 adet cart olusturur.
+    Then kullanici rastgele bir  cart i günceller
+    And kullanici olusturdugu card lari siler
+    Then kullanici olusturdugu bordu siler
 
-      Scenario: delete İşlemi
-      Given  Kullanici deleteBoard islemi yapmak icin "endpoint" e post yaparak gelen status codun 200 oldugunu dogrulanir
 
-        Scenario: Card olustura islemi
-          Given kullanici card olusturmak icin "endpoint" e post yaparak gelen status codun 200 oldugunu dogrular
+
